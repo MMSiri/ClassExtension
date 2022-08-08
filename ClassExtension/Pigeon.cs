@@ -12,7 +12,14 @@ namespace ClassExtension
 
             for (int i = 0; i < numberOfEggs; i++)
             {
-                pigeonEggs[i] = new Egg(Randomizer.NextDouble() * 2 + 1, "white");
+                if (Bird.Randomizer.Next(4) == 0)
+                {
+                    pigeonEggs[i] = new BrokenEgg("white");
+                }
+                else
+                {
+                    pigeonEggs[i] = new Egg(Bird.Randomizer.NextDouble() * 2 + 1, "white");
+                }
             }
             return pigeonEggs;
         }
